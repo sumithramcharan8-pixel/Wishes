@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  
+  --color-warm-bg: #fdfaf6;
+  --color-warm-ink: #2d2d2d;
+  --color-warm-accent: #e6b17e;
+  --color-warm-blush: #f2d1c9;
+  --color-warm-olive: #5a5a40;
+}
+
+@layer base {
+  body {
+    @apply bg-warm-bg text-warm-ink font-sans antialiased;
+  }
+}
+
+.serif {
+  font-family: var(--font-serif);
+}
+
+/* Custom scrollbar for that polished feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-warm-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-warm-accent/30 rounded-full hover:bg-warm-accent/50 transition-colors;
+}
+
+/* Atmospheric effects */
+.glass {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(230, 177, 126, 0.3);
+}
